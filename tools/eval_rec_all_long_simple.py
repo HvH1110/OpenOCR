@@ -54,7 +54,8 @@ def main():
     ]
 
     cfg = cfg.cfg
-    cfg['Eval']['dataset']['name'] = 'SimpleDataSet'
+    # Keep RatioDataSet instead of forcing SimpleDataSet
+    # cfg['Eval']['dataset']['name'] = 'SimpleDataSet'
     file_csv = open(
         cfg['Global']['output_dir'] + '/' +
         cfg['Global']['output_dir'].split('/')[-1] +

@@ -50,3 +50,4 @@ Union14M-L/
 *.pth
 *.zip
 weight/
+vintext/
