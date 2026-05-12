@@ -12,7 +12,7 @@ Global:
   pretrained_model:
   checkpoints:
   use_tensorboard: false
-  infer_img: C:/DAIHOC/OpenOCR/OpenOCR/vintext/text_recognition_data/text_recognition_data/test_data/test_data
+  infer_img: Null
   # for data or label process
   character_dict_path: &character_dict_path ./tools/utils/EN_symbol_dict.txt # 96en
   # ./tools/utils/ppocr_keys_v1.txt  # ch
@@ -113,7 +113,7 @@ Eval:
     name: RatioDataSet
     ds_width: True
     padding: False
-    data_dir_list: ['C:/DAIHOC/OpenOCR/OpenOCR/vintext/text_recognition_data/text_recognition_data/test_data/test_data']
+    data_dir_list: ['C:/DAIHOC/OpenOCR/OpenOCR/commontest/test/Uber/']
     transforms:
       - DecodeImage: # load image
           img_mode: BGR

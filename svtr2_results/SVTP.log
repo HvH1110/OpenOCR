@@ -1,0 +1,187 @@
+
+(openocr) C:\DAIHOC\OpenOCR\OpenOCR>python tools/eval_rec.py --c "C:\DAIHOC\OpenOCR\OpenOCR\strv2_configs\svtrv2_smtr_gtc_rctc\config.yml" --o Global.pretrained_model="C:\DAIHOC\OpenOCR\OpenOCR\strv2_configs\svtrv2_smtr_gtc_rctc\best.pth"
+[2026/05/12 16:16:42] openrec INFO: ----------- Config -----------
+[2026/05/12 16:16:42] openrec INFO: Architecture :
+[2026/05/12 16:16:42] openrec INFO:     Decoder :
+[2026/05/12 16:16:42] openrec INFO:         ctc_decoder :
+[2026/05/12 16:16:42] openrec INFO:             name : RCTCDecoder
+[2026/05/12 16:16:42] openrec INFO:         detach : False
+[2026/05/12 16:16:42] openrec INFO:         gtc_decoder :
+[2026/05/12 16:16:42] openrec INFO:             ds : True
+[2026/05/12 16:16:42] openrec INFO:             max_len : 25
+[2026/05/12 16:16:42] openrec INFO:             name : SMTRDecoder
+[2026/05/12 16:16:42] openrec INFO:             next_mode : True
+[2026/05/12 16:16:42] openrec INFO:             num_layer : 1
+[2026/05/12 16:16:42] openrec INFO:             sub_str_len : 5
+[2026/05/12 16:16:42] openrec INFO:         infer_gtc : True
+[2026/05/12 16:16:42] openrec INFO:         name : GTCDecoder
+[2026/05/12 16:16:42] openrec INFO:     Encoder :
+[2026/05/12 16:16:42] openrec INFO:         depths : [6, 6, 6]
+[2026/05/12 16:16:42] openrec INFO:         dims : [128, 256, 384]
+[2026/05/12 16:16:42] openrec INFO:         feat2d : True
+[2026/05/12 16:16:42] openrec INFO:         last_stage : False
+[2026/05/12 16:16:42] openrec INFO:         local_k : [[5, 5], [5, 5], [-1, -1]]
+[2026/05/12 16:16:42] openrec INFO:         mixer : [['Conv', 'Conv', 'Conv', 'Conv', 'Conv', 'Conv'], ['Conv', 'Conv', 'FGlobal', 'Global', 'Global', 'Global'], ['Global', 'Global', 'Global', 'Global', 'Global', 'Global']]
+[2026/05/12 16:16:42] openrec INFO:         name : SVTRv2LNConvTwo33
+[2026/05/12 16:16:42] openrec INFO:         num_heads : [4, 8, 12]
+[2026/05/12 16:16:42] openrec INFO:         sub_k : [[1, 1], [2, 1], [-1, -1]]
+[2026/05/12 16:16:42] openrec INFO:         use_pos_embed : False
+[2026/05/12 16:16:42] openrec INFO:     Transform : None
+[2026/05/12 16:16:42] openrec INFO:     algorithm : SVTRv2
+[2026/05/12 16:16:42] openrec INFO:     in_channels : 3
+[2026/05/12 16:16:42] openrec INFO:     model_type : rec
+[2026/05/12 16:16:42] openrec INFO: Eval :
+[2026/05/12 16:16:42] openrec INFO:     dataset :
+[2026/05/12 16:16:42] openrec INFO:         data_dir_list : ['C:/DAIHOC/OpenOCR/OpenOCR/commontest/test/SVTP/']
+[2026/05/12 16:16:42] openrec INFO:         ds_width : True
+[2026/05/12 16:16:42] openrec INFO:         name : RatioDataSetTVResize
+[2026/05/12 16:16:42] openrec INFO:         padding : False
+[2026/05/12 16:16:42] openrec INFO:         transforms :
+[2026/05/12 16:16:42] openrec INFO:             DecodeImagePIL :
+[2026/05/12 16:16:42] openrec INFO:                 img_mode : RGB
+[2026/05/12 16:16:42] openrec INFO:             GTCLabelEncode :
+[2026/05/12 16:16:42] openrec INFO:                 character_dict_path : ./tools/utils/EN_symbol_dict.txt
+[2026/05/12 16:16:42] openrec INFO:                 gtc_label_encode :
+[2026/05/12 16:16:42] openrec INFO:                     name : ARLabelEncode
+[2026/05/12 16:16:42] openrec INFO:                 max_text_length : 25
+[2026/05/12 16:16:42] openrec INFO:                 use_space_char : False
+[2026/05/12 16:16:42] openrec INFO:             KeepKeys :
+[2026/05/12 16:16:42] openrec INFO:                 keep_keys : ['image', 'label', 'length', 'ctc_label', 'ctc_length']
+[2026/05/12 16:16:42] openrec INFO:     loader :
+[2026/05/12 16:16:42] openrec INFO:         batch_size_per_card : 128
+[2026/05/12 16:16:42] openrec INFO:         drop_last : False
+[2026/05/12 16:16:42] openrec INFO:         max_ratio : 12
+[2026/05/12 16:16:42] openrec INFO:         num_workers : 0
+[2026/05/12 16:16:42] openrec INFO:         shuffle : False
+[2026/05/12 16:16:42] openrec INFO:     sampler :
+[2026/05/12 16:16:42] openrec INFO:         divided_factor : [4, 16]
+[2026/05/12 16:16:42] openrec INFO:         first_bs : 128
+[2026/05/12 16:16:42] openrec INFO:         fix_bs : False
+[2026/05/12 16:16:42] openrec INFO:         is_training : False
+[2026/05/12 16:16:42] openrec INFO:         name : RatioSampler
+[2026/05/12 16:16:42] openrec INFO:         scales : [[128, 32]]
+[2026/05/12 16:16:42] openrec INFO: Global :
+[2026/05/12 16:16:42] openrec INFO:     cal_metric_during_train : True
+[2026/05/12 16:16:42] openrec INFO:     character_dict_path : ./tools/utils/EN_symbol_dict.txt
+[2026/05/12 16:16:42] openrec INFO:     checkpoints : None
+[2026/05/12 16:16:42] openrec INFO:     device : gpu
+[2026/05/12 16:16:42] openrec INFO:     distributed : False
+[2026/05/12 16:16:42] openrec INFO:     epoch_num : 20
+[2026/05/12 16:16:42] openrec INFO:     eval_batch_step : [0, 500]
+[2026/05/12 16:16:42] openrec INFO:     eval_epoch_step : [0, 1]
+[2026/05/12 16:16:42] openrec INFO:     infer_img : None
+[2026/05/12 16:16:42] openrec INFO:     log_smooth_window : 20
+[2026/05/12 16:16:42] openrec INFO:     max_text_length : 25
+[2026/05/12 16:16:42] openrec INFO:     output_dir : ./output/rec/ablation_msr/svtrv2_smtr_gtc_rctc
+[2026/05/12 16:16:42] openrec INFO:     pretrained_model : C:\DAIHOC\OpenOCR\OpenOCR\strv2_configs\svtrv2_smtr_gtc_rctc\best.pth
+[2026/05/12 16:16:42] openrec INFO:     print_batch_step : 10
+[2026/05/12 16:16:42] openrec INFO:     save_epoch_step : 1
+[2026/05/12 16:16:42] openrec INFO:     save_res_path : ./output/rec/u14m_filter/predicts_svtrv2_smtr_gtc_rctc.txt
+[2026/05/12 16:16:42] openrec INFO:     use_amp : True
+[2026/05/12 16:16:42] openrec INFO:     use_space_char : False
+[2026/05/12 16:16:42] openrec INFO:     use_tensorboard : False
+[2026/05/12 16:16:42] openrec INFO: LRScheduler :
+[2026/05/12 16:16:42] openrec INFO:     cycle_momentum : False
+[2026/05/12 16:16:42] openrec INFO:     name : OneCycleLR
+[2026/05/12 16:16:42] openrec INFO:     warmup_epoch : 1.5
+[2026/05/12 16:16:42] openrec INFO: Loss :
+[2026/05/12 16:16:42] openrec INFO:     ctc_weight : 0.1
+[2026/05/12 16:16:42] openrec INFO:     gtc_loss :
+[2026/05/12 16:16:42] openrec INFO:         name : SMTRLoss
+[2026/05/12 16:16:42] openrec INFO:     name : GTCLoss
+[2026/05/12 16:16:42] openrec INFO: Metric :
+[2026/05/12 16:16:42] openrec INFO:     is_filter : True
+[2026/05/12 16:16:42] openrec INFO:     main_indicator : acc
+[2026/05/12 16:16:42] openrec INFO:     name : RecGTCMetric
+[2026/05/12 16:16:42] openrec INFO: Optimizer :
+[2026/05/12 16:16:42] openrec INFO:     filter_bias_and_bn : True
+[2026/05/12 16:16:42] openrec INFO:     lr : 0.000325
+[2026/05/12 16:16:42] openrec INFO:     name : AdamW
+[2026/05/12 16:16:42] openrec INFO:     weight_decay : 0.05
+[2026/05/12 16:16:42] openrec INFO: PostProcess :
+[2026/05/12 16:16:42] openrec INFO:     character_dict_path : ./tools/utils/EN_symbol_dict.txt
+[2026/05/12 16:16:42] openrec INFO:     gtc_label_decode :
+[2026/05/12 16:16:42] openrec INFO:         name : SMTRLabelDecode
+[2026/05/12 16:16:42] openrec INFO:         next_mode : True
+[2026/05/12 16:16:42] openrec INFO:     name : GTCLabelDecode
+[2026/05/12 16:16:42] openrec INFO:     use_space_char : False
+[2026/05/12 16:16:42] openrec INFO: Train :
+[2026/05/12 16:16:42] openrec INFO:     dataset :
+[2026/05/12 16:16:42] openrec INFO:         data_dir_list : ['../Union14M-L-LMDB-Filtered/filter_train_challenging', '../Union14M-L-LMDB-Filtered/filter_train_hard', '../Union14M-L-LMDB-Filtered/filter_train_medium', '../Union14M-L-LMDB-Filtered/filter_train_normal', '../Union14M-L-LMDB-Filtered/filter_train_easy']
+[2026/05/12 16:16:42] openrec INFO:         ds_width : True
+[2026/05/12 16:16:42] openrec INFO:         name : RatioDataSetTVResize
+[2026/05/12 16:16:42] openrec INFO:         padding : False
+[2026/05/12 16:16:42] openrec INFO:         transforms :
+[2026/05/12 16:16:42] openrec INFO:             DecodeImagePIL :
+[2026/05/12 16:16:42] openrec INFO:                 img_mode : RGB
+[2026/05/12 16:16:42] openrec INFO:             PARSeqAugPIL : None
+[2026/05/12 16:16:42] openrec INFO:             GTCLabelEncode :
+[2026/05/12 16:16:42] openrec INFO:                 character_dict_path : ./tools/utils/EN_symbol_dict.txt
+[2026/05/12 16:16:42] openrec INFO:                 gtc_label_encode :
+[2026/05/12 16:16:42] openrec INFO:                     name : SMTRLabelEncode
+[2026/05/12 16:16:42] openrec INFO:                     sub_str_len : 5
+[2026/05/12 16:16:42] openrec INFO:                 max_text_length : 25
+[2026/05/12 16:16:42] openrec INFO:                 use_space_char : False
+[2026/05/12 16:16:42] openrec INFO:             KeepKeys :
+[2026/05/12 16:16:42] openrec INFO:                 keep_keys : ['image', 'label', 'label_subs', 'label_next', 'length_subs', 'label_subs_pre', 'label_next_pre', 'length_subs_pre', 'length', 'ctc_label', 'ctc_length']
+[2026/05/12 16:16:42] openrec INFO:     loader :
+[2026/05/12 16:16:42] openrec INFO:         batch_size_per_card : 128
+[2026/05/12 16:16:42] openrec INFO:         drop_last : True
+[2026/05/12 16:16:42] openrec INFO:         max_ratio : 12
+[2026/05/12 16:16:42] openrec INFO:         num_workers : 4
+[2026/05/12 16:16:42] openrec INFO:         shuffle : True
+[2026/05/12 16:16:42] openrec INFO:     sampler :
+[2026/05/12 16:16:42] openrec INFO:         divided_factor : [4, 16]
+[2026/05/12 16:16:42] openrec INFO:         first_bs : 128
+[2026/05/12 16:16:42] openrec INFO:         fix_bs : False
+[2026/05/12 16:16:42] openrec INFO:         is_training : True
+[2026/05/12 16:16:42] openrec INFO:         name : RatioSampler
+[2026/05/12 16:16:42] openrec INFO:         scales : [[128, 32]]
+[2026/05/12 16:16:42] openrec INFO: config : C:\DAIHOC\OpenOCR\OpenOCR\strv2_configs\svtrv2_smtr_gtc_rctc\config.yml
+[2026/05/12 16:16:42] openrec INFO: filename : config
+[2026/05/12 16:16:42] openrec INFO: local_rank : None
+[2026/05/12 16:16:42] openrec INFO: ---------------------------------------------
+[2026/05/12 16:16:42] openrec INFO: Initialize indexs of datasets:C:/DAIHOC/OpenOCR/OpenOCR/commontest/test/SVTP/
+[2026/05/12 16:16:42] openrec INFO: 0
+[2026/05/12 16:16:42] openrec INFO: 149
+[2026/05/12 16:16:42] openrec INFO: 279
+[2026/05/12 16:16:42] openrec INFO: 133
+[2026/05/12 16:16:42] openrec INFO: 52
+[2026/05/12 16:16:42] openrec INFO: 14
+[2026/05/12 16:16:42] openrec INFO: 13
+[2026/05/12 16:16:42] openrec INFO: 1
+[2026/05/12 16:16:42] openrec INFO: 2
+[2026/05/12 16:16:42] openrec INFO: 1
+[2026/05/12 16:16:42] openrec INFO: 0
+[2026/05/12 16:16:42] openrec INFO: 1
+[2026/05/12 16:16:42] openrec INFO: 0
+0 149 32.0 1 128
+0 279 64.0 2 128
+0 133 96.0 1 128
+0 52 128.0 128
+0 14 160.0 102
+0 13 192.0 85
+0 1 224.0 73
+0 2 256.0 64
+0 1 288.0 56
+0 1 352.0 46
+[2026/05/12 16:16:42] openrec INFO: valid dataloader has 14 iters
+[2026/05/12 16:16:43] openrec INFO: {'Total': 21022463, 'Trainable': 21022463}
+[2026/05/12 16:16:43] openrec INFO: Loading weights using torch.load: C:\DAIHOC\OpenOCR\OpenOCR\strv2_configs\svtrv2_smtr_gtc_rctc\best.pth
+C:\DAIHOC\OpenOCR\OpenOCR\tools\utils\ckpt.py:87: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(pretrained_model, map_location=torch.device("cpu"))
+[2026/05/12 16:16:43] openrec INFO: finetune from checkpoint C:\DAIHOC\OpenOCR\OpenOCR\strv2_configs\svtrv2_smtr_gtc_rctc\best.pth
+[2026/05/12 16:16:43] openrec INFO: run with torch 2.4.1 and device cuda:0
+[2026/05/12 16:16:43] openrec INFO: metric in ckpt ***************
+eval model::   0%|                                                                                                                                                                         | 0/14 [00:00<?, ?it/s]C:\DAIHOC\OpenOCR\OpenOCR\tools\engine\trainer.py:553: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(
+eval model:: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 14/14 [00:01<00:00,  8.27it/s]
+[2026/05/12 16:16:44] openrec INFO: metric eval ***************
+[2026/05/12 16:16:44] openrec INFO: acc:0.9348837064359116
+[2026/05/12 16:16:44] openrec INFO: norm_edit_dis:0.9846247080026193
+[2026/05/12 16:16:44] openrec INFO: num_samples:645
+[2026/05/12 16:16:44] openrec INFO: gtc_acc:0.9410852567273604
+[2026/05/12 16:16:44] openrec INFO: gtc_norm_edit_dis:0.9856607606505161
+[2026/05/12 16:16:44] openrec INFO: fps:471.6837446163921
+
+(openocr) C:\DAIHOC\OpenOCR\OpenOCR>
