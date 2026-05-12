@@ -173,7 +173,7 @@ Eval:
     ds_width: true
     padding: false
     data_dir_list: [ 
-      'C:/DAIHOC/OpenOCR/OpenOCR/commontest/test/Uber/'
+      'C:/DAIHOC/OpenOCR/OpenOCR/commontest/test/IIIT5k/'
     ]
     transforms:
     - DecodeImagePIL:

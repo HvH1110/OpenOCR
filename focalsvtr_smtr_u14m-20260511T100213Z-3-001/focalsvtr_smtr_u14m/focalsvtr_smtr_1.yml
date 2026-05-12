@@ -113,7 +113,7 @@ Eval:
     name: RatioDataSet
     ds_width: True
     padding: False
-    data_dir_list: ['C:/DAIHOC/OpenOCR/OpenOCR/commontest/test/Uber/']
+    data_dir_list: ['C:/DAIHOC/OpenOCR/OpenOCR/datasets/Union14M-Benchmarks/incomplete/label/']
     transforms:
       - DecodeImage: # load image
           img_mode: BGR
